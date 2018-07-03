@@ -6,6 +6,10 @@ class Solution(object):
         :type wordList: List[str]
         :rtype: int
         """
+        
+        if endWord not in wordList:
+            return 0
+        
         step = 0
         
         wordList = set(wordList)
@@ -42,5 +46,5 @@ class Solution(object):
                         
                         
                     wordInList = list(word)
-        return -1
+        return 0
                     
