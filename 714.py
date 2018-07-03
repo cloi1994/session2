@@ -11,7 +11,7 @@ class Solution(object):
         for p in prices:
             tmp = sold;
             sold = max(sold, hold + p - fee)
-            hold = max(hold, t - p)
+            hold = max(hold, tmp - p)
         
         return sold
             
