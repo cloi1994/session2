@@ -9,14 +9,18 @@ class Solution:
     # @param k, an integer
     # @return a ListNode
     
-    def reverse(self, start, end):
-        newhead=ListNode(0); newhead.next=start
-        while newhead.next!=end:
-            tmp=start.next
-            start.next=tmp.next
-            tmp.next=newhead.next
-            newhead.next=tmp
-        return [end, start]
+    def reverse(self, start, end,k):
+                
+        cur = start
+        prev = end.next
+        
+        for _ in range(k):
+            curNext = cur.next
+            cur.next = prev
+            prev = cur
+            cur = curNext
+        
+        return [prev, start]
     
     def reverseKGroup(self, head, k):
         if not head: 
@@ -37,9 +41,9 @@ class Solution:
                 end = end.next
                 
                 if not end.next:
-                    return root.next
-           
-            res = self.reverse(cur.next, end.next)
+                    return root.next 
+                
+            res = self.reverse(cur.next, end.next,k)    
             
             cur.next = res[0]
             
