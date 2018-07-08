@@ -12,7 +12,7 @@ class Solution(object):
             self.expand(i,i,s)
             self.expand(i,i+1,s)
             
-        return s[self.left:self.maxLen]
+        return s[self.left:self.left+self.maxLen]
             
     def expand(self,left,right,s):
         
