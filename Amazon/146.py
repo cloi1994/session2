@@ -20,9 +20,8 @@ class DoublyLinkedList(object):
 
     def remove_tail(self):
         old_tail = self.tail.prev
-        node = self.tail.prev
-        node.prev.next = self.tail
-        self.tail.prev = node.prev
+        old_tail.prev.next = self.tail
+        self.tail.prev = old_tail.prev
         return old_tail
 
     def remove_node(self, node):
